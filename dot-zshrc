@@ -1,0 +1,36 @@
+
+
+###########
+# ALIASES #
+###########
+alias vim=nvim
+alias v=nvim
+
+
+
+####################
+# SHELL TOOL SETUP #
+####################
+
+# < starship >
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
+
+# < zoxide >
+eval "$(zoxide init zsh)"
+
+# < zsh plugins >
+local BREW_PREFIX="$(brew --prefix)"
+for script in \
+    "zsh-autosuggestions/zsh-autosuggestions.zsh" \
+    "zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
+    "zsh-you-should-use/you-should-use.plugin.zsh" \
+    "zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+do
+    source "${BREW_PREFIX}/share/${script}"
+done
+
+
+
+
+

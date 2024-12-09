@@ -1,0 +1,28 @@
+
+cask_args appdir: "~/Applications", require_sha: true
+
+cask 'wezterm'
+
+brew 'zsh-you-should-use'
+brew 'zsh-syntax-highlighting'
+brew 'zsh-autosuggestions'
+brew 'zsh-vi-mode'
+
+brew 'gum'
+brew 'eza'
+brew 'zoxide'
+brew 'ripgrep'
+brew 'fzf'
+brew 'stow'
+brew 'starship'
+
+brew 'neovim'
+
+
+# git
+brew "git"
+tap 'jesseduffield/lazygit'
+brew "jesseduffield/lazygit/lazygit" # git tui
+
+
+

@@ -1,0 +1,17 @@
+
+mod lang 
+mod? macos
+
+import '.util.just'
+
+[doc('Install the apps I want via a homebrew bundle.')]
+apps: (bundle "$DOTFILES/setup/apps/Brewfile")
+
+[doc('Install the fonts I like via a homebrew bundle.')]
+fonts: (bundle "$DOTFILES/setup/fonts/Brewfile")
+
+[doc('Configure the terminal.')]
+terminal: (bundle "$DOTFILES/setup/terminal/Brewfile")
+    cd "$HOME/dotfiles" && \
+        eval "$(/opt/homebrew/bin/brew shellenv)" && \
+        stow .

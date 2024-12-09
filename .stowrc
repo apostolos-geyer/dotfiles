@@ -1,0 +1,9 @@
+--dotfiles
+--target=~/
+--ignore=.stowrc
+--ignore=DS_Store
+--ignore=homebrew
+--ignore=setup
+--ignore=Justfile
+--ignore=.stow-local-ignore
+--ignore=scripts

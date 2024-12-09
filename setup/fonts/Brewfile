@@ -1,0 +1,16 @@
+
+# Iosevka 
+cask 'font-iosevka'
+cask 'font-iosevka-nerd-font'
+cask 'font-iosevka-term-nerd-font'
+
+# FiraCode
+# cask 'font-fira-code'
+cask 'font-fira-code-nerd-font'
+
+# Agave
+cask 'font-agave-nerd-font'
+
+# IBM Plex
+cask 'font-blex-mono-nerd-font'
+cask 'font-ibm-plex-mono'
