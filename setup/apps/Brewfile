@@ -1,10 +1,25 @@
-
 cask_args appdir: "~/Applications", require_sha: true
 
+# terminal
+cask 'wezterm'
+
+# ui / ux
 cask 'rectangle'
 cask 'stats'
-cask 'discord'
+cask 'raycast'
+
+# coding
 cask 'visual-studio-code'
 cask 'jetbrains-toolbox'
-cask 'chatgpt'
+
+# browser
 cask 'arc'
+
+# ms office
+cask 'microsoft-excel'
+cask 'microsoft-word'
+cask 'microsoft-outlook'
+
+# etc
+cask 'discord'
+cask 'chatgpt'

@@ -33,6 +33,9 @@ return {
       gitbrowse = { enabled = true },
       lazygit = { enabled = true },
       terminal = { enabled = true },
+      dashboard = {
+        enabled = true,
+      },
     },
     keys = {
       {

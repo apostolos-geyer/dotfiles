@@ -1,23 +1,25 @@
 
-cask_args appdir: "~/Applications", require_sha: true
 
-cask 'wezterm'
-
+# zsh extensions
 brew 'zsh-you-should-use'
 brew 'zsh-syntax-highlighting'
 brew 'zsh-autosuggestions'
 brew 'zsh-vi-mode'
 
+# symlink manager
+brew 'stow'
+
+# terminal QOL
 brew 'gum'
 brew 'eza'
 brew 'zoxide'
 brew 'ripgrep'
 brew 'fzf'
-brew 'stow'
 brew 'starship'
+brew 'bat'
 
+# vim
 brew 'neovim'
-
 
 # git
 brew "git"

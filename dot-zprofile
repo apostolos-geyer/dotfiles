@@ -1,6 +1,14 @@
+#!/usr/bin/env zsh
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-
 # Added by Toolbox App
-export PATH="$PATH:/Users/stoli/Library/Application Support/JetBrains/Toolbox/scripts"
+export PATH="$PATH:${HOME}/Library/Application Support/JetBrains/Toolbox/scripts"
 
+# uv
+export PATH="${XDG_DATA_HOME}/../bin:$PATH"
+
+# go
+export PATH="$(go env GOPATH)/bin:$PATH"
+
+export PATH="~/.local/bin:$PATH"

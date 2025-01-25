@@ -7,12 +7,15 @@ charset=utf-8
 end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
+indent_style = space
 
-[*.{py,lua,json,yaml}]
-indent_style=space
-indent_size=2
+[lua]
+indent-size = 2
 
-[*.{js,ts,jsx,tsx,c,h,cpp,hpp,swift}]
-indent_style=space
-indent_size=4
+[*.{c,h,cpp,hpp,swift,py}]
+indent_size = 4
+
+[*.{js,tx,jsx,tsx}]
+indent_size = 2
+
 

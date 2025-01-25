@@ -33,7 +33,7 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     dependencies = {
-      "MunifTanjim/nui.nvim", -- UI components
+      "MunifTanjim/nui.nvim",       -- UI components
       -- Snacks.nvim will handle notifications
     },
     config = function()
@@ -47,15 +47,26 @@ return {
           },
         },
         presets = {
-          bottom_search = true, -- Use a classic bottom search bar
-          command_palette = true, -- Use a clean command palette
-          long_message_to_split = true, -- Long messages in a split
-          inc_rename = false, -- Disable Noice renaming UI
+          bottom_search = true,                   -- Use a classic bottom search bar
+          command_palette = true,                 -- Use a clean command palette
+          long_message_to_split = true,           -- Long messages in a split
+          inc_rename = false,                     -- Disable Noice renaming UI
         },
         notify = {
-          enabled = false, -- Disable Noice's notify integration since Snacks.nvim is in use
+          enabled = false,           -- Disable Noice's notify integration since Snacks.nvim is in use
         },
       })
+    end,
+  },
+  {
+    "stevearc/oil.nvim",
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    init = function()
+      require("oil").setup({})
     end,
   },
 }

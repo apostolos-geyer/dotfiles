@@ -1,4 +1,6 @@
+#!/usr/bin/env zsh
 
+export TERM=xterm-256color
 
 ###########
 # ALIASES #
@@ -11,6 +13,11 @@ alias v=nvim
 ####################
 # SHELL TOOL SETUP #
 ####################
+
+# < eza >
+alias ls=eza
+export EZA_ICONS_AUTO=1
+
 
 # < starship >
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
@@ -31,6 +38,5 @@ do
 done
 
 
-
-
+alias youtube-mp4='yt-dlp -f bestvideo+bestaudio --merge-output-format mov -v'
 

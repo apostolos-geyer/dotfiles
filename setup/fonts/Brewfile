@@ -1,5 +1,5 @@
 
-# Iosevka 
+# Iosevka
 cask 'font-iosevka'
 cask 'font-iosevka-nerd-font'
 cask 'font-iosevka-term-nerd-font'
