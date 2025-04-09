@@ -7,8 +7,10 @@
   "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conform.nvim": { "branch": "master", "commit": "f4e8837878fc5712d053ba3091a73d27d96a09e2" },
+  "killersheep.nvim": { "branch": "master", "commit": "506823c47b854df02e78d5fec9468ab0e542dcf5" },
   "lazy.nvim": { "branch": "main", "commit": "7e6c863bc7563efbdd757a310d17ebc95166cef3" },
   "lazydev.nvim": { "branch": "main", "commit": "f59bd14a852ca43db38e3662395354cb2a9b13e0" },
+  "mdx.nvim": { "branch": "main", "commit": "464a74be368dce212cff02f6305845dc7f209ab3" },
   "miasma.nvim": { "branch": "main", "commit": "37818b190e291c75a2d78118dc7dd8d69d311a8c" },
   "mini.animate": { "branch": "main", "commit": "d14190ac3040116540889e2ebc25f488b195799e" },
   "mini.clue": { "branch": "main", "commit": "983a6c2e6231e94016343ea58921001ab2b74183" },
@@ -27,5 +29,6 @@
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
   "poimandres.nvim": { "branch": "main", "commit": "a488957d803943a4201ac3b774913fcafa9e6b3a" },
   "snacks.nvim": { "branch": "main", "commit": "a7608b13ea476ecca471cf0900a77b8dd1650d76" },
-  "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" }
+  "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" },
+  "typescript-tools.nvim": { "branch": "master", "commit": "35e397ce467bedbbbb5bfcd0aa79727b59a08d4a" }
 }

@@ -1,6 +1,6 @@
----@type LazySpec
+--- @type LazySpec
 return {
-  -- bufferline & icons
+  --- bufferline (top)
   {
     "akinsho/bufferline.nvim",
     version = "*",
@@ -8,9 +8,16 @@ return {
     config = function()
       require("bufferline").setup()
     end,
+    keys = {
+      { "<leader>bb",  "<CMD>BufferLinePick<CR>",      mode = "n", desc = "[b]uffer pick" },
+      { "<leader>bc",  "<CMD>bdelete<CR>",             mode = "n", desc = "[c]lose buffer (current)" },
+      { "<leader>blc", "<CMD>BufferLinePickClose<CR>", mode = "n", desc = "[b]uffer [l]ine [c]lose" },
+      { "<leader>b]",  "<CMD>BufferLineCycleNext<CR>", mode = "n", desc = "next buffer" },
+      { "<leader>b[",  "<CMD>BufferLineCyclePrev<CR>", mode = "n", desc = "previous buffer" },
+    },
   },
 
-  -- statusline
+  --- statusline (bottom)
   {
     "echasnovski/mini.statusline",
     config = function()
@@ -18,55 +25,6 @@ return {
     end,
   },
 
-  -- other icons
+  --- icons
   { "echasnovski/mini.icons", version = false },
-
-  -- nice animations on movement
-  {
-    "echasnovski/mini.animate",
-    version = false,
-    config = function()
-      require("mini.animate").setup({})
-    end,
-  },
-  {
-    "folke/noice.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",       -- UI components
-      -- Snacks.nvim will handle notifications
-    },
-    config = function()
-      require("noice").setup({
-        lsp = {
-          override = {
-            -- Override LSP hover and signature help with Noice UI
-            ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-            ["vim.lsp.util.stylize_markdown"] = true,
-            ["cmp.entry.get_documentation"] = true,
-          },
-        },
-        presets = {
-          bottom_search = true,                   -- Use a classic bottom search bar
-          command_palette = true,                 -- Use a clean command palette
-          long_message_to_split = true,           -- Long messages in a split
-          inc_rename = false,                     -- Disable Noice renaming UI
-        },
-        notify = {
-          enabled = false,           -- Disable Noice's notify integration since Snacks.nvim is in use
-        },
-      })
-    end,
-  },
-  {
-    "stevearc/oil.nvim",
-    ---@module 'oil'
-    ---@type oil.SetupOpts
-    opts = {},
-    -- Optional dependencies
-    dependencies = { { "echasnovski/mini.icons", opts = {} } },
-    init = function()
-      require("oil").setup({})
-    end,
-  },
 }

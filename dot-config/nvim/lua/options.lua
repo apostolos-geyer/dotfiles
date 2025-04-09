@@ -1,30 +1,17 @@
--- replace tabs with spaces
--- and default to 4 spaces
--- this is configured per-language in after/ftplugin
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-
--- numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
-
--- yank to system clipboard
-vim.o.clipboard = "unnamedplus"
-
--- leader
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
--- make the timeout for keybinds not absurdly slow
-vim.opt.timeoutlen = 100
-
--- Define custom filetype detection for bashls
-vim.filetype.add({
-  pattern = {
-    -- Match files with no suffix and a shebang starting with #!/usr/bin/env bash|zsh|sh
-    ["^#!/usr/bin/env%s+bash"] = "sh",
-    ["^#!/usr/bin/env%s+zsh"] = "sh",
-    ["^#!/usr/bin/env%s+sh"] = "sh",
-  },
-})
+for _, fn in
+ipairs(require("profiles").evaluate({
+  all = function()
+    vim.opt.expandtab = true
+    vim.opt.tabstop = 2
+    vim.opt.shiftwidth = 4
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+    vim.o.clipboard = "unnamedplus"
+    vim.g.mapleader = " "
+    vim.g.maplocalleader = "\\"
+    vim.opt.timeoutlen = 100
+  end,
+}))
+do
+  fn()
+end
