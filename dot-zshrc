@@ -31,12 +31,26 @@ local BREW_PREFIX="$(brew --prefix)"
 for script in \
     "zsh-autosuggestions/zsh-autosuggestions.zsh" \
     "zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" \
-    "zsh-you-should-use/you-should-use.plugin.zsh" \
-    "zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+    "zsh-you-should-use/you-should-use.plugin.zsh"
 do
     source "${BREW_PREFIX}/share/${script}"
 done
 
+if [[ -z "$NVIM" && "$TERM_PROGRAM" != "vscode" ]]; then
+  export IS_NORMAL_SHELL=1
+else
+  unset IS_NORMAL_SHELL
+fi
+if [[ $IS_NORMAL_SHELL ]]; then
+    source "${BREW_PREFIX}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh"
+fi
+
+
+
+
 
 alias youtube-mp4='yt-dlp -f bestvideo+bestaudio --merge-output-format mov -v'
 
+
+# bun completions
+[ -s "/opt/homebrew/Cellar/bun/1.2.0/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/Cellar/bun/1.2.0/share/zsh/site-functions/_bun"
