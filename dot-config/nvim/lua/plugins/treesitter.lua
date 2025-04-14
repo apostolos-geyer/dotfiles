@@ -1,5 +1,5 @@
 --- @type LazySpec
-local spec = {
+return {
   "nvim-treesitter/nvim-treesitter",
   build = ":TSUpdate",
   dependencies = {
@@ -100,7 +100,3 @@ local spec = {
     })
   end,
 }
-return require("profiles").evaluate({
-  neovide = spec,
-  terminal = spec,
-})

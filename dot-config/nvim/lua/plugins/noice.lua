@@ -7,6 +7,8 @@ return {
         -- Snacks.nvim will handle notifications
     },
     config = function()
+        --- says missing fields but it's fine
+        --- @diagnostic disable-next-line
         require("noice").setup({
             lsp = {
                 override = {
@@ -17,13 +19,8 @@ return {
                 },
             },
             presets = {
-                bottom_search = true, -- Use a classic bottom search bar
                 command_palette = true, -- Use a clean command palette
                 long_message_to_split = true, -- Long messages in a split
-                inc_rename = false, -- Disable Noice renaming UI
-            },
-            notify = {
-                enabled = false, -- Disable Noice's notify integration since Snacks.nvim is in use
             },
         })
     end,

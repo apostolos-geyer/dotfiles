@@ -9,7 +9,4 @@ return {
   init = function()
     require("oil").setup({})
   end,
-  keys = {
-    { "<leader>e", "<CMD>Oil<CR>", mode = "n", desc = "[e]xplorer (oil)" },
-  },
 }

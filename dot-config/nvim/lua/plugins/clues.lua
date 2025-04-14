@@ -81,6 +81,10 @@ return {
         miniclue.gen_clues.z(),
         textobj_clues(),
       },
+      window = {
+        delay = 200,
+        width = "auto",
+      },
     })
   end,
 }
