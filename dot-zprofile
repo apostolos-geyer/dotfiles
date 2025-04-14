@@ -20,4 +20,3 @@ export PATH="/Users/stoli/.local/cache/.bun/bin:$PATH"
 
 export PATH="$PATH:/Users/stoli/.mix/escripts"
 
-export OLLAMA_HOST="http://127.0.0.1:42069"
