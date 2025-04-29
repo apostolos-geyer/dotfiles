@@ -1,0 +1,62 @@
+# miasma.theme for btop++
+# inspired by https://github.com/xero/miasma.nvim
+
+# Backgrounds
+theme[main_bg]="#222222"
+theme[main_fg]="#d7c483"
+theme[title]="#78834b"
+theme[hi_fg]="#d7c483"
+theme[selected_fg]="#222222"
+theme[selected_bg]="#78834b"
+theme[inactive_fg]="#666666"
+theme[inactive_bg]="#1c1c1c"
+
+# Dividers and frames
+theme[div_line]="#1c1c1c"
+theme[frame_fg]="#685742"
+
+# Meters
+theme[meter_bg]="#1c1c1c"
+theme[meter_fg_good]="#5f875f"
+theme[meter_fg_bad]="#b36d43"
+theme[meter_fg_crit]="#bb7744"
+
+# Graphs
+theme[graph_line]="#5f875f"
+theme[graph_text]="#666666"
+theme[graph_highlight]="#d7c483"
+
+# CPU colors
+theme[cpu_box]="#78834b"
+theme[cpu_cores]="#5f875f"
+
+# Memory colors
+theme[mem_box]="#78834b"
+theme[mem_cache]="#685742"
+theme[mem_buffers]="#5f875f"
+
+# Network colors
+theme[net_box]="#78834b"
+theme[net_up]="#bb7744"
+theme[net_down]="#5f875f"
+
+# Processes
+theme[proc_box]="#78834b"
+theme[proc_good]="#5f875f"
+theme[proc_bad]="#b36d43"
+theme[proc_crit]="#bb7744"
+
+# Disks
+theme[disk_box]="#78834b"
+
+# Battery
+theme[battery_box]="#78834b"
+theme[battery_good]="#5f875f"
+theme[battery_bad]="#b36d43"
+theme[battery_crit]="#bb7744"
+
+# Temperature
+theme[temp_box]="#78834b"
+theme[temp_good]="#5f875f"
+theme[temp_bad]="#b36d43"
+theme[temp_crit]="#bb7744"

@@ -19,7 +19,7 @@ do
       neovide = {
         cond = available("neovide"),
         apply = function()
-          vim.g.neovide_opacity = 0.75
+          vim.g.neovide_opacity = 0.88
           vim.g.neovide_window_blurred = true
           return true
         end,
@@ -38,10 +38,9 @@ end
 
 --- load plugins via lazy
 do
-  M.profiles.activate() -- set active flags
-  local lazy = require("lazy")
+  M.profiles.activate()   -- set active flags
   local when = require("nvprofile.predicates").when
-  local enabled, disabled = { enabled = true }, { enabled = false }
+  local enabled = { enabled = true }
   local plugins = M.profiles.eval({
     [when.always] = {
       {
@@ -51,20 +50,42 @@ do
         ---@type snacks.Config
         opts = M.profiles.eval({
           [when.any_of("terminal", "neovide")] = {
+            indent = enabled,
             gitbrowse = enabled,
             lazygit = enabled,
-            terminal = disabled,
             dashboard = enabled,
             notifier = enabled,
+            image = enabled,
+            dim = {
+              enabled = true,
+              scope = {
+                min_size = 5,
+                max_size = 20,
+                siblings = false,
+              },
+              -- animate scopes. Enabled by default for Neovim >= 0.10
+              -- Works on older versions but has to trigger redraws during animation.
+              ---@type snacks.animate.Config|{enabled?: boolean}
+              animate = {
+                enabled = vim.fn.has("nvim-0.10") == 1,
+                easing = "outQuad",
+                duration = {
+                  step = 20,                     -- ms per step
+                  total = 300,                   -- maximum duration
+                },
+              },
+              -- what buffers to dim
+              filter = function(buf)
+                return vim.g.snacks_dim ~= false
+                    and vim.b[buf].snacks_dim ~= false
+                    and vim.bo[buf].buftype == ""
+              end,
+            },
           },
           vscode = {
             gitbrowse = enabled,
-            lazygit = disabled,
-            terminal = disabled,
-            dashboard = disabled,
-            notifier = disabled,
           },
-        }),
+        }, 1),
       },
       { import = "plugins.comments" },
       checker = { enabled = true },

@@ -15,6 +15,6 @@ indent-size = 2
 [*.{swift,py}]
 indent_size = 4
 
-[*.{js,ts,c,h,cpp,hpp,tsx,jsx}]
+[*.{js,ts,c,h,cpp,hpp,tsx,jsx, astro}]
 indent_size = 2
 

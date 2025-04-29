@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/stoli/completions:"* ]]; then export FPATH="/Users/stoli/completions:$FPATH"; fi
 #!/usr/bin/env zsh
 
 export TERM=xterm-256color
@@ -7,6 +9,8 @@ export TERM=xterm-256color
 ###########
 alias vim=nvim
 alias v=nvim
+
+export EDITOR=nvim
 
 
 
@@ -25,6 +29,16 @@ eval "$(starship init zsh)"
 
 # < zoxide >
 eval "$(zoxide init zsh)"
+
+# < yazi ( file manager ) >
+function y () {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
 
 # < zsh plugins >
 local BREW_PREFIX="$(brew --prefix)"
@@ -54,3 +68,4 @@ alias youtube-mp4='yt-dlp -f bestvideo+bestaudio --merge-output-format mov -v'
 
 # bun completions
 [ -s "/opt/homebrew/Cellar/bun/1.2.0/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/Cellar/bun/1.2.0/share/zsh/site-functions/_bun"
+. "/Users/stoli/.deno/env"
