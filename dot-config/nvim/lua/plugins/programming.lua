@@ -45,7 +45,9 @@ return {
       -- LSPs
       lsp.lua_ls.setup({})
       lsp.basedpyright.setup({})
-      lsp.ruff.setup({})
+      lsp.ruff.setup({
+        capabilities = without(cmp_capabilities, { "textDocument.hover" }),
+      })
       lsp.gopls.setup({})
       lsp.zls.setup({})
       lsp.svelte.setup({})
@@ -125,12 +127,16 @@ return {
               return
             end
 
+            if client.name == "ruff" then
+              client.server_capabilities.hoverProvider = false
+            end
+
             local bufnr = args.buf
             set_lsp_keymaps(bufnr)
 
             vim.notify(string.format("lsp attached: %s %d", client.name, bufnr))
 
-            if client.supports_method("textDocument/formatting") then
+            if client.supports_method("textDocument/formatting", bufnr) then
               vim.api.nvim_create_autocmd("BufWritePre", {
                 buffer = bufnr,
                 callback = function()

@@ -55,7 +55,7 @@ do
             lazygit = enabled,
             dashboard = enabled,
             notifier = enabled,
-            image = enabled,
+            -- image = enabled,
             dim = {
               enabled = true,
               scope = {

@@ -6,4 +6,5 @@ font-family = "Iosevka Nerd Font Mono"
 
 config-file = themes/miasma.ghostty
 
+keybind = global:cmd+grave_accent=toggle_quick_terminal
 

@@ -60,7 +60,7 @@ return {
         { name = "buffer" },
         { name = "path" },
         { name = "cmdline" },
-        { name = "luasnip" },
+        -- { name = "luasnip" },
       },
     })
   end,
